@@ -55,6 +55,7 @@ def implante():
 
     estado = 0 
     salidad= False
+    opcion = 0
     while(salidad == False):
         print("Vaya hay varias cosas en las cuales estan en venta \n pero sin ninguna pista que me puede dar una idea de donde esta la chica")
         print("\n<Se ve interesante estos implantes, que deberia hacer? >\n")
@@ -71,11 +72,21 @@ def implante():
             print("1. Tomar el dinero")
             print("2. ir a ver la terminal")
             print("3. Regresar")
+            opcion = int(input("Que deseas hacer?"))
+            if(opcion == 1):
+                print("Tomo el dinero")
+                GlobalVars.inventario.append("Dinero")
+            elif(opcion == 2):
+                print("Veo que el terminal esta bloqueado")
+                print("Parece necesitar un codigo para desbloquearlo")
+                print("Voy a ver si puedo encontrar algo que me ayude a desbloquearlo")
+            elif(opcion == 3):
+                print("<Vuelvo a la entrada>")
 
         elif(estado == 3):
             print("No me interesa nada de esto, mejor me voy")
             return None
         
         else:
-            print("Oye, apresurae que tengo cosas que hacer")
+            print("Oye, apresurate que tengo cosas que hacer")
             print("Si dejame seguir viendo que hacer")
