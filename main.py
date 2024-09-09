@@ -22,15 +22,11 @@ def Calle():
     estado = 0
     while estado != 404:
         print("Opciones:\n")
-        if(GlobalVars.InspCalle):
-            print("1.- Entrar a tienda de Ramen.\
-            2.- Hablar con Robot Asistente.\
-            3.- Entrar a tienda de implantes tecnologicos.\
-            4.- Inspeccionar calle.\n")
-        else:
-            print("1.- Entrar a tienda de Ramen.\
-            2.- Hablar con Robot Asistente.\
-            3.- Entrar a tienda de implantes tecnologicos.\n")
+        print("1.- Entrar a tienda de Ramen.\
+        \n2.- Hablar con Robot Asistente.\
+        \n3.- Entrar a tienda de implantes tecnologicos.\
+        \n4.- Inspeccionar calle.\n")
+        
         
         opt = int(input())
         if(opt==1):

@@ -1,3 +1,4 @@
+
 import GlobalVars
 
 def Robot():
@@ -7,7 +8,7 @@ def Robot():
     #Create loop for a state machine
     while chat != False:
         if state == 0:
-            print("Hola soy AlanMeLaPela3000 , tu asistente virtual. Nesecitas informacion de algo en especifico")
+            print("Hola soy Robotronix , tu asistente virtual. ¿Necesitas informacion de algo en especifico?")
             print("1. Preguntarle al robot acerca de sitios turisticos")
             print("2. Preguntarle al robot acerca del horario del transporte")
             print("3. Interrogar al robot")

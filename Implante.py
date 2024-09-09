@@ -8,7 +8,7 @@ def Mejora():
     print("3. salir")
     
     
-    if(GlobalVars.T and GlobalVars.U and GlobalVars.C):
+    if(GlobalVars.T and GlobalVars.U and GlobalVars.P):
         print("4. Inculpar al cirujano")
     
     opciones = int(input("Que deseas hacer? "))
@@ -85,6 +85,7 @@ def implante():
 
         elif(estado == 3):
             print("No me interesa nada de esto, mejor me voy")
+            GlobalVars.InspCalle = True
             return None
         
         else:

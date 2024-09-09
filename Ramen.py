@@ -46,6 +46,7 @@ def PuestoRamen():
             elif (opt == "4"):
                 print("<Saliste del establecimiento>")
                 GlobalVars.PuntajeActual += 1
+                GlobalVars.InspCalle = True
                 return
             else:
                 print("<Opcion invalida>")
@@ -105,6 +106,7 @@ def PuestoRamen():
                   Ten , este telefono te sirve mas a ti que a mi. Avisame si la encuentras, aunque lo dude mucho.")
             print("<Recibiste un telefono celular en malas condiciones>")
             GlobalVars.T = True
+            GlobalVars.InspCalle = True
             return
         #Interrogar
         if(state == 5):
