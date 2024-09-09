@@ -3,90 +3,90 @@ import GlobalVars
 def PuestoRamen():
     state = 0
     interrogate = False
-    print("¡Bienvenido! a Kōdo Ramen. Pasa, resguardate del frio de la ciudad.")
+    print("Tendero: ¡Bienvenido a Kōdo Ramen! Pasa, resguárdate del frío de la ciudad.")
 
     while state != 404:
-        if state == 0: # ! Llegada
-            print("<Que desas hacer>")
+        if state == 0:  # ! Llegada
+            print("\n¿Qué deseas hacer?")
             print("1. Hablar con el tendero")
             print("2. Salir del lugar")
-            if(interrogate):
+            if interrogate:
                 print("3. Inculpar")
-            opt = input("Elige una opcion: ")
-            if (opt == "1"):
-                state = 1 # ? Hablar
-            elif (opt == "2"):
-                state = 400 # ? Despedida
+            opt = input("Elige una opción: ")
+            if opt == "1":
+                state = 1  # ? Hablar
+            elif opt == "2":
+                state = 400  # ? Despedida
             else:
-                print("<Opcion invalida>")
+                print("Opción inválida.")
         
-        elif state == 1: # ! Hablar
-            print("<Que deseas decirle al tendero?>")
+        elif state == 1:  # ! Hablar
+            print("\nTendero: ¿En qué puedo ayudarte?")
             print("1. Comprar")
-            print("2.Salir")
-            if (interrogate):
+            print("2. Salir")
+            if interrogate:
                 print("3. Interrogar")
-            if (GlobalVars.T):
+            if GlobalVars.T:
                 print("4. Inculpar")
-            opt = input()
-            if (opt == "1"):
-                state = 2 # ? Comprar
-            elif (opt == "2"):
-                state = 400 # ? Despedida
-            elif (opt == "3" and interrogate):
-                state = 3 # ? Interrogar
-            elif (opt == "4" and GlobalVars.T):
-                state = 4 # ? Inculpar
+            opt = input("Elige una opción: ")
+            if opt == "1":
+                state = 2  # ? Comprar
+            elif opt == "2":
+                state = 400  # ? Despedida
+            elif opt == "3" and interrogate:
+                state = 3  # ? Interrogar
+            elif opt == "4" and GlobalVars.T:
+                state = 4  # ? Inculpar
             else:
-                print("<Opcion invalida>")
+                print("Opción inválida.")
         
-        elif state == 2: # ! Comprar
-            print("<Que deseas comprar?>")
+        elif state == 2:  # ! Comprar
+            print("\nTendero: ¿Qué deseas comprar?")
             print("1. Sake")
             print("2. Ramen")
             print("3. Salir")
-            opt = input()
-            if (opt == "1"):
-                print("<Le das un trago al sake y te relajas un poco>")
+            opt = input("Elige una opción: ")
+            if opt == "1":
+                print("Bebes un trago de sake y te relajas un poco.")
                 interrogate = True
-                state = 1 # ? Hablar
-            elif (opt == "2"):
-                print("<El comer ramen calienta un poco tu cuerpo>")
-                interrogate == True
-                state = 1 # ? Hablar
-            elif (opt == "3"):
-                state = 1 # ? Hablar
+                state = 1  # ? Hablar
+            elif opt == "2":
+                print("El ramen caliente reconforta tu cuerpo.")
+                interrogate = True
+                state = 1  # ? Hablar
+            elif opt == "3":
+                state = 1  # ? Hablar
             else:
-                print("<Opcion invalida>")
-
-        elif state == 3: # ! Interrogar
-            print("<Comienzas a interrogar al tendero>")
-            print("El tendero te menciona sobre una chica que entro un poco agitada, no pidio nada, estuvo como unos 5 minutos. Salio corriendo dejando atras un telefono.")
-            print("<Tomas el celular>")
+                print("Opción inválida.")
+        
+        elif state == 3:  # ! Interrogar
+            print("\nComienzas a interrogar al tendero.")
+            print("Tendero: Una chica entró muy agitada, no pidió nada y se fue rápido, dejando un teléfono atrás.")
+            print("Has añadido un teléfono a tu inventario.")
             GlobalVars.T = True
-            print("<Celular añadido a inventario>")
-            state = 1 # ? Hablar
-
-        elif state == 4: # ! Inculpar
-            print("<Estas seguro de que deseas inculpar al tendero>")
-            print("1. Si\n2.No")
-            opt = input()
-            if (opt == "1"):
-                print("<Inculpaste al tendero>")
-                state = 404 # ? Fin
-            elif (opt == "2"):
-                print("<Regresas a hablar con el tendero>")
-                state = 1 # ? Hablar
+            state = 1  # ? Hablar
+        
+        elif state == 4:  # ! Inculpar
+            print("\n¿Estás seguro de que deseas inculpar al tendero?")
+            print("1. Sí")
+            print("2. No")
+            opt = input("Elige una opción: ")
+            if opt == "1":
+                print("Has inculpado al tendero.")
+                state = 404  # ? Fin
+            elif opt == "2":
+                print("Regresas a hablar con el tendero.")
+                state = 1  # ? Hablar
             else:
-                print("<Opcion invalida>")
+                print("Opción inválida.")
         
         elif state == 400:
-            print("<Saliste del establecimiento>")
+            print("Has salido del establecimiento.")
             state = 404
         
         else:
             return
-    return
 
+    return
 
 PuestoRamen()
