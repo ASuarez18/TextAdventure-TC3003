@@ -15,7 +15,9 @@ InspCalle = False
 Codigo = False
 
 #Punatje
-PuntajeActual = 0
+puntuajeActual = 0
+
+sumPuntuaje = 0
 
 #Inventario
 inventario = []
@@ -23,10 +25,18 @@ inventario = []
 #Zona de ramen
 
 def PuestoRamen():
+    global puntuajeActual
+    global inventario
+    global T
+    global InterrRamen
+
+
+
+
     state = 0
     interrogate = False
     while state != 404:
-        print("¡Bienvenido! a Kōdo Ramen. Pasa, resguardate del frio de la ciudad.")
+        print("¡Bienvenido! a Kōdo Ramen. Pasa, resguardate del frío de la ciudad.")
         if state == 0:
             print("<Que deseas hacer>")
             print("1. Hablar con el tendero")
@@ -36,13 +46,13 @@ def PuestoRamen():
             opt = input("Elige una opcion: ")
             if (opt == "1"):
                 state = 1 # Hablar
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
             elif (opt == "2"):
                 print("<Saliste del establecimiento>")
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 return
             elif (opt == "3"):
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 6
             else:
                 print("<Opcion invalida>")
@@ -56,18 +66,18 @@ def PuestoRamen():
             opt = input("Elige una opcion: " )
             if(opt == "1"):
                 print("No se de que me estas hablando")
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 1
             elif(opt == "2"):
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 2
             elif (opt == "3"):
                 print("Tonterias, te puedes ir a la mierda")
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 1
             elif (opt == "4"):
                 print("<Saliste del establecimiento>")
-                PuntajeActual += 1
+                puntuajeActual = 1
                 InspCalle = True
                 return
             else:
@@ -83,17 +93,17 @@ def PuestoRamen():
                 print("Compraste un ramen")
                 if(interrogate):
                     state = 7
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 3
             elif (opt == "2"):
                 print("Compraste un sake")
                 if(interrogate):
                     state = 7
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 3
             elif (opt == "3"):
                 print("<Regresaste al menu>")
-                PuntajeActual += 1
+                puntuajeActual += 1
                 state = 1
             else:
                 print("<Opcion invalida>")
@@ -108,13 +118,13 @@ def PuestoRamen():
             print("3.Volver al menu")
             opt = input("Elige una opcion: ")
             if (opt == "1"):
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 4
             elif (opt == "2"):
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 5
             elif (opt == "3"):
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 print("<Regresaste al menu>")
                 state = 1
             else:
@@ -140,11 +150,11 @@ def PuestoRamen():
             print("2. Cancelar")
             opt = input("Elige una opcion: ")
             if (opt == "1"):
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 8
             elif (opt == "2"):
                 print("<Regresaste al menu>")
-                PuntajeActual += 1
+                puntuajeActual = puntuajeActual + 1
                 state = 1
             else:
                 print("<Opcion invalida>")
@@ -253,6 +263,11 @@ def Robot():
 
 #Zona de Implante
 def Mejora():
+    global T
+    global U
+    global P
+    global inventario
+
     print("Cirujano: Hola veo que te interesa estos implantes, son de lo mejor que hay en el mercado")
     print("Cirujano: Tengo varios modelos, cual te gustaria ver?")
     print("1. Implante de ojos")
@@ -351,6 +366,8 @@ estado_inspeccion = 0
 # Función que permite inspeccionar la calle
 def Inspeccionar():
     global estado_inspeccion
+    global P
+    global E
 
     if estado_inspeccion == 0:
         print("<Encontraste un Unicornio de Papel>")
@@ -369,11 +386,8 @@ def Inspeccionar():
         estado_inspeccion = 2
 
     else:
-        print("<Decidiste terminar la inspección.>")
+        print("<Ya no hay nada más que inspeccionar.>")
         print("<No parece haber nada más de interés por aquí.>\n")
-
-
-
 
 
 # Función de calle en la que los posibles estados son:
@@ -383,11 +397,11 @@ def Inspeccionar():
 # Inspeccion
 def Calle():
     print("Una noche más en la agitadas y luminosas calles de Tokio\
-        tu trabajo como inspector privado no va muy bien ultimamente.....estas pensando en dejarlo\
-        de pronto, tu celular suena....es la llamada de una madre desesperada por encontrar a su hija perdida\
-        la ultima vez que supo de ella se encontraba en las calles de Akihabara, la madre te ha compartido la ultima ubicación\
-        por lo que decides dirigirte a esta.\
-        La victima depende de ti para ser encontrada, ¿Qué haras?\n")
+        \ntu trabajo como inspector privado no va muy bien ultimamente.....estas pensando en dejarlo\
+        \nde pronto, tu celular suena....es la llamada de una madre desesperada por encontrar a su hija perdida\
+        \nla ultima vez que supo de ella se encontraba en las calles de Akihabara, la madre te ha compartido la ultima ubicación\
+        \npor lo que decides dirigirte a esta.\
+        \nLa victima depende de ti para ser encontrada, ¿Qué haras?\n")
     
     estado = 0
     while estado != 404:
@@ -402,7 +416,7 @@ def Calle():
         if(opt==1):
             PuestoRamen()
         elif(opt==2):
-            Robot.Robot()
+            Robot()
         elif(opt==3):
             implante()
         elif(opt==4):
