@@ -8,21 +8,21 @@ def Inspeccionar():
     global estado_inspeccion
 
     if estado_inspeccion == 0:
-        print("Encontraste un Unicornio de Papel")
-        print("Parece que alguien lo dejó por accidente. Pero está bonito")
+        print("<Encontraste un Unicornio de Papel>")
+        print("<Parece que alguien lo dejó por accidente. Pero está bonito>")
 
         # Se agrega el objeto al inventario
         GlobalVars.P = True
         estado_inspeccion = 1
 
     elif estado_inspeccion == 1:
-        print("Encontraste una Envoltura de Dulce.")
-        print("Está un poco arrugada y sucia, pero parece que tiene un código.")
+        print("<Encontraste una Envoltura de Dulce.>")
+        print("<Está un poco arrugada y sucia, pero parece que tiene un código.>")
 
         # Se agrega el objeto al inventario
         GlobalVars.E = True
         estado_inspeccion = 2
 
     else:
-        print("Decidiste terminar la inspección.")
-        print("No parece haber nada más de interés por aquí.")
+        print("<Decidiste terminar la inspección.>")
+        print("<No parece haber nada más de interés por aquí.>")
