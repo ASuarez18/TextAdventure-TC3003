@@ -14,3 +14,6 @@ InspCalle = False
 # Variables Robot
 Codigo = False
 
+#Punatje
+PuntajeActual = 0
+

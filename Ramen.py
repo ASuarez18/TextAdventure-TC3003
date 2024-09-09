@@ -10,7 +10,9 @@ def PuestoRamen():
             print("<Que desas hacer>")
             print("1. Hablar con el tendero")
             print("2. Salir del lugar")
-            opt = input()
+            if(interrogate):
+                print("3. Inculpar")
+            opt = input("Elige una opcion: ")
             if (opt == "1"):
                 state = 1 # ? Hablar
             elif (opt == "2"):

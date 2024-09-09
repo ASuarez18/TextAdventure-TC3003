@@ -32,7 +32,7 @@ def Calle():
             2.- Hablar con Robot Asistente.\
             3.- Entrar a tienda de implantes tecnologicos.\n")
         
-        opt = input()
+        opt = int(input())
         if(opt==1):
             Ramen.PuestoRamen()
         elif(opt==2):
